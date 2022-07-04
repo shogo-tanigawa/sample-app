@@ -52,20 +52,33 @@ p {
 
 /* ヘッダー */
 
+#header {
+  background-color: teal;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
+  color: white;
+  text-transform: none;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  font-style: italic;
 }
 
 #logo:hover {
-  color: #fff;
+  color: gray;
   text-decoration: none;
+}
+
+#header-list {
+  color: white;
+}
+
+#header-list:hover {
+  color: gray;
 }
 
 /* デバッグウインドウ */
