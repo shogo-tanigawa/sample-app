@@ -60,7 +60,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: #fff;
   text-transform: none;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -69,16 +69,25 @@ p {
 }
 
 #logo:hover {
-  color: gray;
+  color: #C0C0C0;
   text-decoration: none;
 }
 
-#header-list {
-  color: white;
+.header-list {
+  color: #fff !important;
+  font-weight: bold;
 }
 
-#header-list:hover {
-  color: gray;
+.header-list:hover {
+  color: silver !important;
+}
+
+.dropdown {
+  color: #fff;
+}
+
+#dropdown-title {
+  background-color: teal;
 }
 
 /* デバッグウインドウ */
