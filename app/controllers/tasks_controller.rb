@@ -16,6 +16,7 @@ class TasksController < ApplicationController
   
   def index
      @tasks = Task.all
+     @user = User.find(params[:user_id])
   end
   
   def show

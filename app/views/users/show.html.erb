@@ -18,7 +18,7 @@
           </tr>
           <tr>
             <th class="active">作成日</th>
-            <td><%= @user.created_at %></td>
+            <td><%= l(@user.created_at, format: :long) %></td>
           </tr>
         </tbody>
       </table>
