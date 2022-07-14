@@ -1,4 +1,4 @@
-<% provide(:title, "Task") %>
+<% provide(:title, @user.name) %>
 <div class="main tasks-index">
   <div class="container">
     <h1><%= @user.name %>のタスク一覧</h1>
@@ -20,7 +20,7 @@
                 <td><%= l(task.created_at, format: :long) %></td>
                 <td>
                   <%= link_to "編集", "#", class: "btn btn-success" %>
-                  <%= link_to "削除", "#", method: :delete, data: { confirm: "「#{task.name}」を削除します。よろしいですか？" }, class: "btn btn-danger" %>
+                  <%= link_to "削除", user_tasks_path, method: :delete, data: { confirm: "「#{task.name}」を削除します。よろしいですか？" }, class: "btn btn-danger" %>
                 </td>
               </tr>
             <% end %>
