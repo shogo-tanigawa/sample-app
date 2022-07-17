@@ -1,4 +1,9 @@
 class TasksController < ApplicationController
+  before_action :set_user, only: [:index, :show, :edit, :update]
+  
+  def show
+    @task = @user.tasks
+  end
   
   def new
     @task = Task.new
@@ -18,11 +23,9 @@ class TasksController < ApplicationController
   
   def index
     @tasks = Task.all
-    @user = User.find(params[:user_id])
   end
   
-  def show
+  def set_user
     @user = User.find(params[:user_id])
-    @task = @user.tasks
   end
 end

@@ -1,25 +1,29 @@
 <% provide(:title, @user.name) %>
 <div class="container">
-  <h1>プロフィール</h1>
+  <h1>タスク詳細</h1>
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <table class="table table-borderd, teble-condensed user-table">
         <tbody>
           <tr>
             <th class="active col-md-3">ID</th>
-            <td class="col-md-9"><%= @user.id %></td>
+            <td class="col-md-9"><%= @tasks.id %></td>
           </tr>
           <tr>
-            <th class="active">名前</th>
-            <td><%= @user.name %></td></td>
+            <th class="active">名称</th>
+            <td><%= @tasks.name %></td></td>
           </tr>
           <tr>
-          <th class="active">メールアドレス</th>
-          <td><%= @user.email %></td>
+          <th class="active">詳細</th>
+          <td><%= @tasks_description %></td>
           </tr>
           <tr>
             <th class="active">作成日</th>
-            <td><%= l(@user.created_at, format: :long) %></td>
+            <td><%= l(@tasks.created_at, format: :long) %></td>
+          </tr>
+          <tr>
+            <th class="active">更新日</th>
+            <td><%= l(@tasks.updated_at, format: :long) %></td>
           </tr>
         </tbody>
       </table>
