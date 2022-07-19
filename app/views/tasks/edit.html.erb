@@ -1,9 +1,9 @@
-<% provide(:title, "New Task") %>
-<h1>タスク新規作成</h1>
+<% provide(:title, "Edit Task") %>
+<h1>タスク編集</h1>
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <%= form_with(model: @task, url: user_tasks_path, local: true,) do |f| %>
+    <%= form_with(model: @task, url: user_task_path, local: true,) do |f| %>
       
       <%= f.label :名称, class: "label-form" %>
       <%= f.text_field :name, class: "form-control" %>
@@ -11,7 +11,7 @@
       <%= f.label :詳細, class: "label-form" %>
       <%= f.text_area :description, rows: 5, class: "form-control" %>
       
-      <%= f.submit "新規登録", class: "btn btn-lg btn-primary btn-login" %>
+      <%= f.submit "更新", class: "btn btn-md btn-primary btn-form" %>
     <% end %>
   </div>
 </div>
