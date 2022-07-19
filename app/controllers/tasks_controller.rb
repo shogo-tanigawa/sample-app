@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_user, only: [:index, :show, :edit, :update]
+  before_action :correct_user, only: [:index, :show, :edit, :update]
   
   def show
     @task = @user.tasks
@@ -22,10 +23,16 @@ class TasksController < ApplicationController
   end
   
   def index
-    @tasks = Task.all
+    @tasks = @user.tasks
   end
   
-  def set_user
-    @user = User.find(params[:user_id])
-  end
+  private
+    
+    def set_user
+      @user = User.find(params[:user_id])
+    end
+    
+    def correct_user
+      redirect_to(root_url) unless current_user?(@user)
+    end
 end
