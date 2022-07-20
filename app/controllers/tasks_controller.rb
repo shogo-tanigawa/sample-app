@@ -25,9 +25,13 @@ class TasksController < ApplicationController
   end
   
   def update
-    @task = @user.tasks.update(task_params)
-    flash[:success] = "タスクを更新しました。"
-    redirect_to user_tasks_url @user
+    @task = Task.find(params[:id])
+    if @task.update_attributes(task_params)
+      flash[:success] = "タスクを更新しました。"
+      redirect_to user_tasks_url @user
+    else
+      render :edit
+    end
   end
   
   def index
