@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :correct_user, only: [:index, :show, :edit, :update]
   
   def show
-    @task = @user.tasks
+    @tasks = Task.find(params[:id])
   end
   
   def new
