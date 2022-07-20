@@ -1,6 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#table-tasks td {
+  vertical-align: middle;
+}
+
 #task-name {
   font-size: 1.8rem;
+}
+
+.label-form {
+  margin-top: 5px;
+}
+
+.btn-form {
+  margin-top: 10px;
 }
