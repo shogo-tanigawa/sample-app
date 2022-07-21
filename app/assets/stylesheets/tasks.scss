@@ -1,8 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#table-tasks td {
+.table-task td {
   vertical-align: middle;
+  word-wrap: break-word;
 }
 
 #task-name {
@@ -17,7 +18,12 @@
   margin-top: 10px;
 }
 
-.table-task {
+#table-task {
   table-layout: fixed;
   width: 100%;
+}
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
