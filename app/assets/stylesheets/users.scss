@@ -9,6 +9,17 @@
   text-align: left;
 }
 
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.label-user-division {
+    margin-left: 5px;
+}
+
 /* 入力フォーム */
 
 .label-Signup {
@@ -32,5 +43,6 @@
 #table-users {
   td {
     vertical-align: middle;
+    font-size: 14px;
   }  
 }
