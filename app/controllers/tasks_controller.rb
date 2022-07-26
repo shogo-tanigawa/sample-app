@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_user
-  before_action :logged_in_user, only: [:index, :show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :index, :show, :edit, :update, :destroy]
   
   def show
     @tasks = Task.find(params[:id])
@@ -9,6 +8,9 @@ class TasksController < ApplicationController
   
   def new
     @task = Task.new
+    unless @user.id == current_user.id
+      redirect_to root_url
+    end
   end
   
   def create
@@ -23,13 +25,17 @@ class TasksController < ApplicationController
   
   def edit
     @task = Task.find(params[:id])
+    unless @user.id == current_user.id
+        flash[:danger]="ログインユーザー以外のタスク編集はできません。"
+        redirect_to user_tasks_url current_user
+    end
   end
   
   def update
     @task = Task.find(params[:id])
     if @task.update_attributes(task_params)
       flash[:success] = "タスクを更新しました。"
-      redirect_to user_tasks_url @user
+      redirect_to user_task_url @user
     else
       render :edit
     end
@@ -55,16 +61,12 @@ class TasksController < ApplicationController
     def set_user
       @user = User.find(params[:user_id])
     end
-    
+
     def logged_in_user
       unless logged_in?
         store_location
         flash[:danger] = "ログインしてください。"
         redirect_to login_url
       end
-    end
-    
-    def correct_user
-      redirect_to(root_url) unless current_user?(@user)
     end
 end
