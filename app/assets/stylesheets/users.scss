@@ -1,12 +1,22 @@
 /* ユーザー情報テーブル */
 
-.active {
-  text-align: center;
+.user-table {
+  border-collapse: collapse;
 }
 
 .user-table {
-  vertical-align: middle;
-  text-align: left;
+  th {
+    border: solid 1px silver;
+    text-align: center;
+  }
+}
+
+.user-table {
+  td {
+    border: solid 1px silver;
+    vertical-align: middle;
+    text-align: left;
+  }
 }
 
 h1 {
